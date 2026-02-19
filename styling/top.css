@@ -1,23 +1,36 @@
+*{
+   font-family: "Times New Roman", Times, serif;
+}
 
+body{
+    background-color: lightgray;
+    z-index: 1;
+    margin: 0px;
+}
+
+.cover-top,
+.button-name,
+.sidebar{
+    background-color: #003366;
+    z-index: 2;
+}
 .cover-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     border-bottom: 1px solid rgb(211, 211, 211);
-    position: relative;
+    position: relative;  
 }
 
 /*Left side*/
-.search-button{
-    height: 12.5px;
-}
 
 .search-bar {
     display: flex;
     align-items: center;   
     gap: 8px;             
     cursor: pointer;
+    color: white;
 }
 
 /*Middle*/
@@ -57,23 +70,26 @@
     cursor: pointer;
     height: 32px; 
 }
+
 .button-name{
     display: flex;
     justify-content: center;
-    border-bottom: 3px solid rgb(211, 211, 211);
+    
 }
 .button-name button{
     border: none;
     background:none;
     transition: 0.3s ease;
     padding: 10px;
-    font-size: 10px;
     font-size: 15px;
+    color: #003366;
+    font-weight: bold;
     
 }
 .button-name button:hover{
     background-color: lightgray;
     font-weight: bold;
+    color: #ef2300;
     
 }
 .sidebar {
@@ -98,12 +114,17 @@
     background-color: #f0f0f0; 
     padding-left: 20px;        
     color: black;
+    
 }
 .line1{
     width: 200px;
     background-color: lightgray;
 }
 
+.home, 
+.history:hover{
+    font-weight: bold;
+}
 
 
 
