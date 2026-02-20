@@ -3,7 +3,7 @@
 }
 
 body{
-   
+    /* Using a very clean, slightly cool white for a premium news feel */
     background-color: #F8FAFC;
     z-index: 1;
     margin: 0px;
@@ -12,31 +12,33 @@ body{
 .cover-top,
 .button-name,
 .sidebar{
-    
+    /* PROFESSIONAL GRADIENT: Deep Slate to Carbon Blue */
     background: linear-gradient(90deg, #1E293B 0%, #0F172A 100%);
     z-index: 2;
 }
-                               */
+/* Cover All Top                                   */
 .cover-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    /* Subtle transparent border for a sleek glass-like edge */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;  
     z-index: 999;
 }
-                                   */
+
+/* Left side                                       */
 
 .search-bar {
     display: flex;
     align-items: center;   
     gap: 8px;             
     cursor: pointer;
-    color: #CBD5E1; 
+    color: #CBD5E1; /* Muted silver for a more professional look than pure white */
 }
 
-                                     */
+/* Middle                                           */
 .name-page{
     display: flex;
     gap: 5px;
@@ -54,10 +56,10 @@ body{
     letter-spacing: 3px;
  }
 
-                                    
+/* Right Side                                        */
 
 .register-button{
-    background-color: #334155; 
+    background-color: #334155; /* Slate gray button */
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
@@ -87,7 +89,7 @@ body{
     padding: 10px;
     font-size: 15px;
     font-weight: bold;
-    color: #E2E8F0; 
+    color: #E2E8F0; /* Clean off-white text */
 }
 
 .button-name button:hover{
@@ -96,7 +98,7 @@ body{
     color: white;
 }
 
-
+/* Side bar                                                */
 .sidebar {
     display: flex;
     flex-direction: column; 
@@ -104,10 +106,11 @@ body{
     gap: 5px;   
     position: fixed;
     left: -250px;
-    top: 52px;                       
+    top: 52px;                       /* Aligned to header line */
     height: calc(100vh - 52px);     
     overflow-y: auto;               
     transition: 0.3s ease;
+    /* Vertical version of the professional gradient */
     background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -204,6 +207,7 @@ body{
 .search-bar i:hover {
     transform: scale(1.1);
 }
+
 .search-bar:focus-within {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
