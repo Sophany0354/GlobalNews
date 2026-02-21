@@ -1,44 +1,41 @@
+
+
 *{
-   font-family: "Times New Roman", Times, serif;
+   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+   /*Do ah nis*/
+   box-sizing: border-box;
 }
 
-body{
-    /* Using a very clean, slightly cool white for a premium news feel */
-    background-color: #F8FAFC;
-    z-index: 1;
-    margin: 0px;
+body {
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), 
+    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    height: 100vh;
 }
 
 .cover-top,
 .button-name,
 .sidebar{
-    /* PROFESSIONAL GRADIENT: Deep Slate to Carbon Blue */
-    background: linear-gradient(90deg, #1E293B 0%, #0F172A 100%);
+    
+    background: rgb(15, 23, 42, 0.8); /*Do header color*/
+    backdrop-filter: blur(10px);
     z-index: 2;
 }
-/* Cover All Top                                   */
 .cover-top{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    /* Subtle transparent border for a sleek glass-like edge */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;  
+    position: sticky; /*Do relative tv stciky*/ 
+    top: 0;
     z-index: 999;
 }
 
-/* Left side                                       */
-
-.search-bar {
-    display: flex;
-    align-items: center;   
-    gap: 8px;             
-    cursor: pointer;
-    color: #CBD5E1; /* Muted silver for a more professional look than pure white */
-}
-
-/* Middle                                           */
 .name-page{
     display: flex;
     gap: 5px;
@@ -56,27 +53,6 @@ body{
     letter-spacing: 3px;
  }
 
-/* Right Side                                        */
-
-.register-button{
-    background-color: #334155; /* Slate gray button */
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    padding: 6px 10px;
-    cursor: pointer;
-    height: 32px; 
-}
-.sign-in-button{
-    color: white;
-    background-color: black;
-    border-radius: 4px;
-    padding: 6px 10px;
-    border: none;
-    cursor: pointer;
-    height: 32px; 
-}
-
 .button-name{
     display: flex;
     justify-content: center;
@@ -89,7 +65,7 @@ body{
     padding: 10px;
     font-size: 15px;
     font-weight: bold;
-    color: #E2E8F0; /* Clean off-white text */
+    color: #E2E8F0; 
 }
 
 .button-name button:hover{
@@ -98,31 +74,46 @@ body{
     color: white;
 }
 
-/* Side bar                                                */
 .sidebar {
     display: flex;
     flex-direction: column; 
-    width: 200px;    
+    width: 240px; 
     gap: 5px;   
     position: fixed;
-    left: -250px;
-    top: 52px;                       /* Aligned to header line */
-    height: calc(100vh - 52px);     
-    overflow-y: auto;               
-    transition: 0.3s ease;
-    /* Vertical version of the professional gradient */
-    background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    left: -300px;
+    top: 60px; 
+    /*  Set a max-height so the browser knows when to start scrolling */
+    max-height: calc(100vh - 80px); 
+    /*  Change this to 'auto' to enable scrolling functionality */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    margin-left: 15px;              
+    padding: 20px 10px;              
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+
+    /* ah nis dak glass Effect */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); 
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+
+    /* ah nis side scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border: none;
 }
 
-.Following{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Hide scrollbar for Chrome/Safari while keeping scroll active */
+.sidebar::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
 }
 
-.sidebar.active{
-    left: 0;
+.sidebar.active {
+    left: 5px;
 }
 
 .sidebar a {
@@ -216,4 +207,20 @@ body{
 .search-bar:focus-within input {
     width: 180px;
 }
+/*Ah nis do register botton*/
+.register-button, .sign-in-button{
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-left: 5px;
+    color: #CBD5E1;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+
+
 
