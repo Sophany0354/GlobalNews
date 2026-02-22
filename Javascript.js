@@ -27,7 +27,8 @@ const sidebar = document.querySelector(".sidebar");
 menuIcon.addEventListener("click", function(){
     sidebar.classList.toggle("active");
 });
-                                                           
+             
+
 
 
 

@@ -7,12 +7,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   </head>
 
+   <!--ah nis yg dak function nv knong register-->
+       <div id = "regPopup" class="registration-overlay">
+        <div class="registration-box">
+          <button class="exit-popup">&times;</button>
+          <h3 class="text-register">Join Global News</h3>
+          <form>
+            <input type="email" placeholder="Email Address" class="email">
+            <input type="password" placeholder="Create Password" class="pw">
+          <div class="remember-forget">
+              <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+              </div> 
+           <a href="#">Forget Password?</a>
+          </div>
+            <button type="submit" class="submit-action">Sign Up</button>
+          </form>
+        
+        </div>
+       </div>
+
   <body>
-
-
-
-
-
 
     <div class="cover-top">
       <div class="search-bar">
@@ -73,6 +89,8 @@
        <div id="more-following"></div>
 
        <a href="#" id="show-more-btn">Show More ...</a>
+
+      
 
        <script src="javascript.js"></script>
     </div>
