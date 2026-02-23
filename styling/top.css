@@ -350,3 +350,41 @@ body {
     opacity: 1;
 }
 
+/*ah nis style news function*/
+.button-name button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 -3px 0 0 white; /* This acts like a border-bottom but is more stable */
+    color: white;
+    font-weight: bold;
+}
+
+.news-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+.news-feed{
+    background: rgba(15, 23, 42, 0.7); 
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    max-width: 800px;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+/*ber ot dak ah nis ahsor ng vea reang joub 1 border klang*/
+.news-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+}
+.title{
+    color: white;
+}
+.show-more{
+    color: white;
+}
