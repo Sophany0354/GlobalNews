@@ -1,67 +1,91 @@
-document.getElementById("show-more-btn").addEventListener("click", function(e) {
+// ===============================
+// SHOW MORE (safe)
+// ===============================
+const showMoreBtn = document.getElementById("show-more-following");
+
+if (showMoreBtn) {
+  showMoreBtn.addEventListener("click", function (e) {
+
     e.preventDefault();
 
-    const newNames = [
-        "The Guardian",
-        "New York Times",
-        "France 24",
-        "Al Jazeera",
-        "Reuters",
+    const newsSites = [
+      { name: "The Guardian", link: "https://www.theguardian.com" },
+      { name: "New York Times", link: "https://www.nytimes.com" },
+      { name: "France 24", link: "https://www.france24.com" },
+      { name: "Al Jazeera", link: "https://www.aljazeera.com" },
+      { name: "Reuters", link: "https://www.reuters.com" }
     ];
 
     const container = document.getElementById("more-following");
 
-    newNames.forEach(function(name) {
-        const p = document.createElement("p");
-        p.textContent = name;
-        container.appendChild(p);
+    newsSites.forEach(site => {
+      const a = document.createElement("a");
+      a.href = site.link;
+      a.textContent = site.name;
+      a.target = "_blank";
+      container.appendChild(a);
     });
 
     this.style.display = "none";
-});
+  });
+}
 
 
+// ===============================
+// SIDEBAR TOGGLE
+// ===============================
 const menuIcon = document.querySelector(".fa-bars");
 const sidebar = document.querySelector(".sidebar");
+const searchBar = document.querySelector(".search-bar");
 
-menuIcon.addEventListener("click", function(){
+if (menuIcon && sidebar) {
+  menuIcon.addEventListener("click", function () {
     sidebar.classList.toggle("active");
-});
-             
-// This listens for clicks anywhere on the window
-window.addEventListener('click', function(e) {
-    
-    if (sidebar.classList.contains('active')) {
-        // If the click is not the sidebar and not the menu icon
-        if (!sidebar.contains(e.target) && !menuIcon.contains(e.target)) {
-            sidebar.classList.remove('active');
-        }
+  });
+}
+
+
+// ===============================
+// CLOSE SIDEBAR OUTSIDE CLICK
+// ===============================
+window.addEventListener("click", function (e) {
+
+  if (sidebar && sidebar.classList.contains("active")) {
+
+    if (
+      !sidebar.contains(e.target) &&
+      !menuIcon.contains(e.target) &&
+      !searchBar.contains(e.target)
+    ) {
+      sidebar.classList.remove("active");
     }
+  }
 });
 
+// ===============================
+// REGISTER POPUP
+// ===============================
+const registerBtn = document.querySelector(".register-button");
+const regPopup = document.getElementById("regPopup");
+const closeBtn = document.querySelector(".exit-popup");
 
+// Open popup
+if (registerBtn) {
+  registerBtn.addEventListener("click", () => {
+    regPopup.classList.add("open");
+  });
+}
 
+// Close with X
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    regPopup.classList.remove("open");
+  });
+}
 
-/*ah nis hav from html*/ 
-const registerBtn = document.querySelector('.register-button');
-const regPopup = document.getElementById('regPopup');
-const closeBtn = document.querySelector('.exit-popup');
-
-// When clicking Register, add the 'open' class
-registerBtn.addEventListener('click', () => {
-    regPopup.classList.add('open');
+// Close when clicking background
+window.addEventListener("click", (e) => {
+  if (e.target === regPopup) {
+    regPopup.classList.remove("open");
+  }
 });
-
-// When clicking the 'X', remove the 'open' class
-closeBtn.addEventListener('click', () => {
-    regPopup.classList.remove('open');
-});
-
-// Optional: Close if clicking on the dark background area
-window.addEventListener('click', (e) => {
-    if (e.target === regPopup) {
-        regPopup.classList.remove('open');
-    }
-});
-
-
