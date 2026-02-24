@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front-End Project</title>
+    <link rel="stylesheet" href="styling/top.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+
+   <!--ah nis yg dak function nv knong register-->
+       <div id = "regPopup" class="registration-overlay">
+        <div class="registration-box">
+          <button class="exit-popup">&times;</button>
+          <h3 class="text-register">Join Global News</h3>
+          <form>
+            <input type="email" placeholder="Email Address" class="email">
+            <input type="password" placeholder="Create Password" class="pw">
+          <div class="remember-forget">
+              <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+              </div> 
+           <a href="#">Forget Password?</a>
+          </div>
+            <button type="submit" class="submit-action">Sign Up</button>
+          </form>
+        
+        </div>
+       </div>
+
+  <body>
+
+    <div class="cover-top">
+      <div class="search-bar">
+        <i class="fa-solid fa-bars"></i>
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass search-button"></i>
+      </div>
+
+      <div class="name-page">
+        <span class="global">Global</span>
+        <span>News</span>
+      </div>
+
+      <div>
+        <button class="register-button">Register</button>
+        <button class="sign-in-button">Sign in</button>
+      </div>
+    </div>
+
+    <div class="button-name">
+      <button class="active">News</button>
+      <button>Sport</button>
+      <button>Business</button>
+      <button>Technology</button>
+      <button>Health</button>
+      <button>Culture</button>
+      <button>Arts</button>
+      <button>Travel</button>
+      <button>Earth</button>
+    </div>
+<!--ah nis news article-->
+<!--ah nis news article-->
+    <main class="news-container">
+      <div class="news-feed">
+      <div class="news-item">
+        <div class="news-text">
+          <h2><a href="#" class="title">Continued Armed Conflict Along Thailand-Cambodia Border</a></h2>
+          <p>BORDER ZONE — The long-simmering territorial dispute between Cambodia and Thailand has reached its most critical point in decades. Following a period of relative calm, the border has been engulfed by a fresh wave of violence in 2025, marking the most severe combat since the disagreement first began in the 1950s..</p> 
+          <p><strong>Roots of the Dispute</strong> 
+            The friction between the two nations dates back to Cambodia's post-independence era from France. At the heart of the initial conflict was the 11th-century Preah Vihear temple. While the International Court of Justice (ICJ) ruled in favor of Cambodia in 1962, the decision did not lead to a full joint demarcation of the surrounding borders.</p> 
+            <a href="#" id="show-more-btn" class="show-more">Show More ...</a>
+        </div>
+      </div>
+    </div>
+    </main>
+    <div class="sidebar">
+
+       <a href="#" class="Home"><i class='bx bx-home'></i> Home</a>
+       <a href="#"><i class='bx bxs-bell-ring' ></i> Breaking News</a>
+       <a href="#"><i class='bx bx-trending-up'></i> Trending News</a>
+       <a href="#"><i class='bx bx-category' ></i> Categories</a>
+
+       <hr class="line1">
+
+       <a href="#" class="History"><i class='bx bx-history' ></i> History</a>
+       <a href="#"><i class='bx bx-save' ></i> saved</a>
+       <a href="#"><i class='bx bx-collection' ></i> Collections</a>
+
+       <hr class="line1">
+
+       <a href="#" class="Setting"><i class='bx bx-cog' ></i> Setting</a>
+       <a href="#"><i class='bx bxs-user-account' ></i> Your Account</a>
+       
+       <hr class="line1">
+
+       <h2 class="Following">Following</h2>
+
+       <a href="https://edition.cnn.com/" target="_blank">CNN</a>
+       <a href="https://www.bbc.com/news" target="_blank">BBC</a>
+
+       <div id="more-following"></div>
+
+       <a href="#" id="show-more-following">Show More ...</a>
+
+       <script src="Javascript.js"></script>
+    </div>
+   
+  </body>
+</html>
