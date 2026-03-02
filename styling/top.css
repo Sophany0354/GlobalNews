@@ -12,10 +12,30 @@ body {
     background-attachment: fixed;
     margin: 0;
     height: 100vh;
-  
 }
 
-/*                                                           Left side                           */
+/* Header & Sidebar Backgrounds */
+.cover-top,
+.button-name,
+.sidebar{
+    background: rgb(15, 23, 42, 0.8); /*Do header color*/
+    backdrop-filter: blur(10px);
+    z-index: 2;
+}
+/* ========================================================== ALL Top ==========================================================*/
+.cover-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed; /*Do relative tv stciky*/ 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+/* ========================================================== Left side ========================================================== */
 .search-bar {
     display: flex;
     align-items: center;
@@ -26,7 +46,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: 0.3s;
 }
-
 .search-bar input {
     background: none;
     border: none;
@@ -52,33 +71,9 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.5);
 }
-
 .search-bar:focus-within input {
     width: 165px;
 }
-
-.cover-top,
-.button-name,
-.sidebar{
-    background: rgb(15, 23, 42, 0.8); /*Do header color*/
-    backdrop-filter: blur(10px);
-    z-index: 2;
-}
-
-/*                                                           ALL Top                          */
-.cover-top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: fixed; /*Do relative tv stciky*/ 
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-}
-
 .name-page{
     display: flex;
     gap: 5px;
@@ -96,7 +91,7 @@ body {
     letter-spacing: 3px;
  }
 
- /*                                                       Button Name                        */
+ /* ========================================================== Button Name ==========================================================*/
 .button-name{
     display: flex;
     justify-content: center;
@@ -111,7 +106,6 @@ body {
     font-size: 15px;
     font-weight: bold;
     color: #E2E8F0; 
-
 }
 
 .button-name button:hover{
@@ -119,107 +113,15 @@ body {
     font-weight: bold;
     color: white;
 }
-/*                                                           Sidebar                       */
-.sidebar {
-    display: flex;
-    flex-direction: column; 
-    width: 240px; 
-    gap: 5px;   
-    position: fixed;
-    left: -300px;
-    top: 50px; 
-    /*  Set a max-height so the browser knows when to start scrolling */
-    max-height: calc(100vh - 80px); 
-    /*  Change this to 'auto' to enable scrolling functionality */
-    overflow-y: auto; 
-    overflow-x: hidden;
-    margin-left: 15px;              
-    padding: 20px 10px;              
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    /* ah nis dak glass Effect */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); 
-    border-radius: 24px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    /* ah nis side scrollbar */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    border: none;
-}
 
-/* Hide scrollbar for Chrome/Safari while keeping scroll active */
-.sidebar::-webkit-scrollbar {
-    display: none;
-    width: 0px;
-    background: transparent;
-}
-
-.sidebar.active {
-    left: 5px;
-}
-
-.sidebar a {
-    text-decoration: none;  
-    color: #CBD5E1;            
-    padding: 10px 15px;     
-    font-size: 16px;
-    border-radius: 5px;     
-    transition: 0.2s;       
-}
-
-.sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.15); 
-    padding-left: 20px;        
+/*ah nis style news function*/
+.button-name button.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 -3px 0 0 white; /* This acts like a border-bottom but is more stable */
     color: white;
     font-weight: bold;
 }
-
-.following{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
-}
-
-.line1{
-    width: 180px;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.home, 
-.history:hover{
-    font-weight: bold;
-}
-
-.sidebar,
-#more-following{
-    display: flex;
-    flex-direction: column;
-}
-#more-following p{
-    color: #CBD5E1;
-    font-size: 16px;
-    text-decoration: none;            
-    padding: 10px 15px;     
-    border-radius: 5px;     
-    transition: 0.2s; 
-    margin: 0px;
-}
-
-#more-following p:hover{
-    background-color: rgba(255, 255, 255, 0.15); 
-    padding-left: 20px;        
-    color: white;
-    font-weight: bold;
-}
-
-#show-more-btn{
-    font-size: 12px;
-}
-
-/*                                                    Right Side                     */
+/* ========================================================== Right Side ========================================================== */
 /*Ah nis do register botton*/
 .register-button, .sign-in-button{
     padding: 6px 15px;
@@ -232,7 +134,6 @@ body {
 }
 
 /*ah nis bos register button*/
-
 .registration-overlay {
     position: fixed;
     top: 0;
@@ -243,7 +144,6 @@ body {
     z-index: 9999;
     display: none;/* jam dak display: none*/
     justify-content: center;
- 
     align-items: center;
 }
 /* This class will be added by JavaScript to show and center the box */
@@ -270,7 +170,6 @@ body {
     margin-bottom: 30px;
     font-weight: 600;
 }
-
 
 .registration-box form {
     display: flex;
@@ -363,64 +262,3 @@ body {
     opacity: 1;
 }
 
-/*ah nis style news function*/
-.button-name button.active {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 -3px 0 0 white; /* This acts like a border-bottom but is more stable */
-    color: white;
-    font-weight: bold;
-}
-
-.news-container {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: center;
-}
-.news-feed{
-    background: rgba(15, 23, 42, 0.7); 
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    max-width: 800px;
-    width: 100%;
-    color: white;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-/*ber ot dak ah nis ahsor ng vea reang joub 1 border klang*/
-.news-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 10px 20px;
-}
-.title{
-    color: white;
-}
-.show-more{
-    color: white;
-}
-
-.registration-overlay {
-    display: none;
-}
-
-.registration-overlay.open {
-    display: flex;
-}
-
-.news-container{
-    display: block;
-    margin-top: -20px;
-    margin-left: 260px;
-}
-
-.sentence{
-    color:white;
-    font-size: bold;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    top: 100px;
-}
