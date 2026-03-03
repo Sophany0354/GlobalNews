@@ -7,25 +7,37 @@
     position: fixed;
     left: -240px;
     top: 50px; 
-    /* Set a max-height so the browser knows when to start scrolling */
+    
+    /* 1. Only keep ONE transition line */
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    
+    /* 2. Initial state (Hidden) */
+    visibility: hidden; 
+    opacity: 0;
+    
     max-height: calc(105vh - 80px); 
-    /* Change this to 'auto' to enable scrolling functionality */
     overflow-y: auto; 
     overflow-x: hidden;
-    margin-left: 15px;              
-    padding: 20px 10px;              
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    /* ah nis dak glass Effect */
+    margin-left: 15px;               
+    padding: 20px 10px;               
+    
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px); 
     border-radius: 24px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    /* ah nis side scrollbar */
+    
     scrollbar-width: none;
     -ms-overflow-style: none;
     border: none;
+}
+
+/* 3. The Active State - must turn visibility and opacity back on! */
+.sidebar.active {
+    left: 5px;
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Hide scrollbar for Chrome/Safari while keeping scroll active */
@@ -34,11 +46,6 @@
     width: 0px;
     background: transparent;
 }
-
-.sidebar.active {
-    left: 5px;
-}
-
 .sidebar a {
     text-decoration: none;  
     color: #CBD5E1;            
