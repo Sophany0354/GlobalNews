@@ -1,56 +1,49 @@
-/* --- News Container Default (Perfectly Centered) --- */
+/* =========================
+   1. NEWS CONTAINER
+========================= */
+
 .news-container {   
     margin-top: 20px;
-    /* Use auto to ensure the left and right are mathematically equal */
     margin-left: auto;
     margin-right: auto;
-    
     width: 90%;
     max-width: 1200px;
     display: flex;
     flex-direction: column; 
-    
-    /* Position relative allows us to 'shift' it smoothly without breaking the centering */
     position: relative;
-    left: 0; 
-    
+    left: 0;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: left, width; 
+    will-change: left, width;
 }
 
-/* --- When Pushed --- */
+/* When sidebar pushes layout */
+
 body.sidebar-pushed .news-container {
-    /* Instead of changing margins, we 'push' the centered box to the right */
-    /* 200px is roughly your sidebar width + a small gap */
-    left: 120px; 
-    
-    /* Shrink the width slightly so it doesn't go off the right edge */
-    width: calc(90% - 120px); 
+    left: 120px;
+    width: calc(90% - 120px);
 }
-/* Grid Layout */
+
+/* =========================
+   2. GRID LAYOUT
+========================= */
+
 .flowers {
     display: grid;
-    /* 1. minmax(250px) is the 'sweet spot' for 4 columns on most laptops */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    
-    /* 2. justify-content: center keeps the whole group in the middle 
-       if the last row only has 1 or 2 cards */
-    justify-content: center; 
-    
+    justify-content: center;
     gap: 20px;
     width: 100%;
 }
-.flower {
-    width: 100%;      /* Takes up the full width of the card */
-    max-width: 350px; /* But won't get bigger than 350px */
-    height: auto;     /* Keeps the aspect ratio perfect */
-    border-radius: 12px;
-}
 
-/* Card Animation State */
+
+/* =========================
+   3. NEWS CARD
+========================= */
+
 .news-card {
     opacity: 0;
     transform: translateY(40px);
+
     transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -59,13 +52,37 @@ body.sidebar-pushed .news-container {
     transform: translateY(0);
 }
 
+/* Card hover effect */
+
 .news-card:hover {
-    transform: translateY(-5px) scale(1.02) !important; /* Move up slightly on hover */
+    transform: translateY(-5px) scale(1.02) !important;
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
     border-color: rgba(255, 255, 255, 0.3);
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* =========================
+   4. IMAGE STYLE
+========================= */
+
+.flower {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* Image zoom on hover */
+
+.flower:hover{
+    transform: scale(1.1);
+}
+
+/* =========================
+   5. TEXT STYLE
+========================= */
 
 .title {
     color: white;
@@ -74,8 +91,8 @@ body.sidebar-pushed .news-container {
 }
 
 .sentence {
-    color: #CBD5E1; /* Light gray for paragraphs is easier to read than pure white */
+    color: #CBD5E1;
     font-size: 14px;
-    font-weight: normal; /* Paragraphs shouldn't be bold */
-    line-height: 1.5;    /* Gives space between lines of text */
+    font-weight: normal;
+    line-height: 1.5;
 }
