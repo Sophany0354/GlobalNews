@@ -108,3 +108,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// ============================================================
+// 5. SEARCH LOGIC (Jumping to Sections or Content)
+// ============================================================
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
+
+function executeSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    if (!query) return;
+
+    // 1. Check for specific category keywords
+    if (query === "news") {
+        const target = document.querySelector('.news-container');
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+    } 
+    else if (query === "sport") {
+        const target = document.getElementById('sport-section');
+        if(target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+    // 2. Search within the news cards for matching text
+    else {
+        const cards = document.querySelectorAll('.news-card');
+        let found = false;
+
+        cards.forEach(card => {
+            if (card.textContent.toLowerCase().includes(query) && !found) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Visual feedback: Highlight the card temporarily
+                card.style.outline = "3px solid #3b82f6";
+                card.style.transition = "outline 0.3s ease";
+                setTimeout(() => card.style.outline = "none", 2000);
+                
+                found = true;
+            }
+        });
+    }
+}
+
+// Add event listeners for Search
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', executeSearch);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') executeSearch();
+    });
+}
