@@ -8,6 +8,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styling/sidebar.css">
     <link rel="stylesheet" href="styling/page.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
 
@@ -62,12 +65,14 @@
 
 <!--ah nis news article-->
 <main class="news-container">
-  <div class="flowers">
+  <div class="flowers" data-aos="zoom-in">
 
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
+    <div class="news-card" data-aos="fade-up">
+      <img src="images/flower.jpg" 
+      class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+      alt="">
       <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
+        <h3 class="title" data-aos="fade-right">Breaking News: City Growth</h3>
         <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
       </div>
     </div>
@@ -193,6 +198,14 @@
        <a href="#" id="show-more-following">Show Moree ...</a>
 
        <script src="Javascript.js"></script>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+          AOS.init({
+            duration: 1000
+          });
+        </script>
     </div>
    
   </body>
