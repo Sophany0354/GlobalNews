@@ -47,18 +47,23 @@ body.sidebar-pushed .news-container {
     border-radius: 12px;
 }
 
+/* Card Animation State */
 .news-card {
-    max-width: 320px; 
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(15, 23, 42, 0.7); /* Dark semi-transparent background */
-    backdrop-filter: blur(8px);       /* Glass effect like your sidebar */
-    border-radius: 12px;
-    padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-card.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.news-card:hover {
+    transform: translateY(-5px) scale(1.02) !important; /* Move up slightly on hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .title {

@@ -14,6 +14,8 @@ body {
     height: 100vh;
 }
 
+
+
 /* Header & Sidebar Backgrounds */
 .cover-top,
 .button-name,
@@ -135,33 +137,27 @@ body {
 
 /*ah nis bos register button*/
 .registration-overlay {
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 9999;
-    display: none;/* jam dak display: none*/
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    z-index: 1000; /* Make sure it's on top of everything */
     justify-content: center;
     align-items: center;
-}
 /* This class will be added by JavaScript to show and center the box */
 .registration-overlay.open {
     display: flex;
 }
 
 .registration-box {
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(15px); 
-    -webkit-backdrop-filter: blur(15px);
-    padding: 50px 40px;
-    border-radius: 20px;
-    width: 400px;
-    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.2); 
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    /* Add other styling from your video reference here */
 }
 
 .text-register {

@@ -81,3 +81,30 @@ if (closeBtn && regPopup) {
         regPopup.classList.remove("open");
     });
 }
+
+// ============================================================
+// 4. SCROLL REVEAL ANIMATION
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll('.news-card');
+
+    const observerOptions = {
+        threshold: 0.1, // Trigger when 10% of the card is visible
+        rootMargin: "0px 0px -50px 0px" // Trigger slightly before it hits the bottom
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                // Optional: stop watching after it appears once
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    cards.forEach(card => {
+        scrollObserver.observe(card);
+    });
+});
+
