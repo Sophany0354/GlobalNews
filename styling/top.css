@@ -1,271 +1,310 @@
+/* ==========================================================
+   GLOBAL
+========================================================== */
 *{
    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-   /*Do ah nis*/
    box-sizing: border-box;
 }
 
-body {
-    background: #f7f7f7; 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin: 0;
-    height: 100vh;
+body{
+    background:#f7f7f7;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+    margin:0;
+    height:100vh;
 }
 
-
-
-/* Header & Sidebar Backgrounds */
+/* ==========================================================
+   HEADER & SIDEBAR
+========================================================== */
 .cover-top,
 .button-name,
 .sidebar{
-    background: rgb(15, 23, 42, 0.8); /*Do header color*/
+    background: rgb(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
-    z-index: 2;
+    z-index:2;
 }
-/* ========================================================== ALL Top ==========================================================*/
+
+/* ==========================================================
+   TOP BAR
+========================================================== */
 .cover-top{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: fixed; /*Do relative tv stciky*/ 
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-}
-/* ========================================================== Left side ========================================================== */
-.search-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 15px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: 0.3s;
-}
-.search-bar input {
-    background: none;
-    border: none;
-    outline: none;
-    color: white;
-    width: 120px;
-    transition: 0.4s;
-}
-.search-bar input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-.search-bar i {
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-.search-bar i:hover {
-    transform: scale(1.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
 }
 
-.search-bar:focus-within {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+/* ==========================================================
+   SEARCH BAR
+========================================================== */
+.search-bar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:5px 15px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+    transition:0.3s;
 }
-.search-bar:focus-within input {
-    width: 165px;
+
+.search-bar input{
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    width:120px;
+    transition:0.4s;
 }
+
+.search-bar input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+.search-bar i{
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.search-bar:focus-within{
+    background:rgba(255,255,255,0.2);
+    border-color:rgba(255,255,255,0.5);
+}
+
+.search-bar:focus-within input{
+    width:165px;
+}
+
+/* ==========================================================
+   SITE TITLE
+========================================================== */
 .name-page{
-    display: flex;
-    gap: 5px;
-    position: absolute; 
-    left: 50%;
-    transform: translateX(-45%);
+    display:flex;
+    gap:5px;
+    position:absolute;
+    left:50%;
+    transform:translateX(-45%);
 }
-.name-page span{
-    font-size: 28px;
-    font-weight: 800;
-    cursor: pointer;
-    color: white;
-}
- .global{
-    letter-spacing: 3px;
- }
 
- /* ========================================================== Button Name ==========================================================*/
+.name-page span{
+    font-size:28px;
+    font-weight:800;
+    color:white;
+}
+
+.global{
+    letter-spacing:3px;
+}
+
+/* ==========================================================
+   CATEGORY BUTTONS
+========================================================== */
 .button-name{
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
+    display:flex;
+    justify-content:center;
+    margin-top:50px;
 }
 
 .button-name button{
-    border: none;
+    border:none;
     background:none;
-    transition: 0.3s ease;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #E2E8F0; 
+    padding:10px;
+    font-size:15px;
+    font-weight:bold;
+    color:#E2E8F0;
+    transition:0.3s;
 }
 
 .button-name button:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-    font-weight: bold;
-    color: white;
+    background-color:rgba(255,255,255,0.1);
+    color:white;
 }
 
-/*ah nis style news function*/
-.button-name button.active {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: inset 0 -3px 0 0 white; /* This acts like a border-bottom but is more stable */
-    color: white;
-    font-weight: bold;
-}
-/* ========================================================== Right Side ========================================================== */
-/*Ah nis do register botton*/
-.register-button, .sign-in-button{
-    padding: 6px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    margin-left: 5px;
-    color: #CBD5E1;
-    background: rgba(255, 255, 255, 0.2);
+.button-name button.active{
+    background-color:rgba(255,255,255,0.2);
+    box-shadow: inset 0 -3px 0 white;
+    color:white;
 }
 
-/*ah nis bos register button*/
-.registration-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
-    z-index: 1000; /* Make sure it's on top of everything */
-    justify-content: center;
-    align-items: center;
-/* This class will be added by JavaScript to show and center the box */
-.registration-overlay.open {
-    display: flex;
+/* ==========================================================
+   LOGIN / REGISTER BUTTONS
+========================================================== */
+.register-button,
+.sign-in-button{
+    padding:6px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    border:none;
+    margin-left:5px;
+    color:#CBD5E1;
+    background:rgba(255,255,255,0.2);
 }
 
-.registration-box {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    /* Add other styling from your video reference here */
+/* ==========================================================
+   POPUP OVERLAY
+========================================================== */
+.registration-overlay{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
 }
 
-.text-register {
-    color: white;
-    font-size: 30px;
-    margin-bottom: 30px;
-    font-weight: 600;
+.registration-overlay.open{
+    display:flex;
 }
 
-.registration-box form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* ==========================================================
+   LOGIN BOX
+========================================================== */
+.registration-box{
+    width:420px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    border-radius:10px;
+    padding:30px 40px;
+    border:2px solid rgba(255,255,255,0.3);
+    backdrop-filter:blur(35px);
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    position:relative;
 }
 
-.registration-box input[type="email"],
-.registration-box input[type="password"] {
-    width: 100%;
-    padding: 12px 15px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
-    color: white;
-    outline: none;
-    font-size: 16px;
+/* TITLE */
+.registration-box h1{
+    text-align:center;
+    font-size:36px;
 }
 
-.registration-box input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+/* ==========================================================
+   INPUT FIELDS
+========================================================== */
+.input-box{
+    position:relative;
+    width:100%;
+    height:50px;
+    margin:30px 0;
 }
 
-/* Checkbox and Link Row */
-.remember-forget {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-    font-size: 14px;
+.input-box input{
+    width:100%;
+    height:100%;
+    background:transparent;
+    border:none;
+    outline:none;
+    border:2px solid rgba(255,255,255,0.2);
+    border-radius:50px;
+    font-size:16px;
+    color:white;
+    padding:20px 45px 20px 20px;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    color: white;
-    gap: 5px;
+.input-box input::placeholder{
+    color:white;
 }
 
-.remember-forget a {
-    color: white;
-    text-decoration: none;
+.input-box i{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
 }
 
-/* Submit Button */
-.submit-action {
-    width: 100%;
-    padding: 12px;
-    border-radius: 25px; 
-    border: none;
-    background: white;
-    color: #333;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+/* ==========================================================
+   REMEMBER / FORGOT
+========================================================== */
+.remember-forget{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    margin:-15px 0 15px;
 }
 
-.submit-action:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-2px);
+.remember-forget label{
+    color:white;
 }
 
-/* Register Link at Bottom */
-.registration-box p {
-    color: white;
-    margin-top: 20px;
-    font-size: 14px;
+.remember-forget a{
+    color:white;
+    text-decoration:none;
 }
 
-.registration-box p a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
+.remember-forget a:hover{
+    text-decoration:underline;
 }
 
-.exit-popup {
-    color: white;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    opacity: 0.7;
+/* ==========================================================
+   LOGIN BUTTON
+========================================================== */
+.submit-action{
+    width:100%;
+    height:45px;
+    background:white;
+    border:none;
+    color:black;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
 }
 
-.exit-popup:hover {
-    opacity: 1;
+/* ==========================================================
+   REGISTER TEXT
+========================================================== */
+.registration-box p{
+    font-size:14px;
+    text-align:center;
+    margin:20px 0 15px;
 }
 
-/* Chrome, Edge, Safari autofill */
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px rgba(15, 23, 42, 0.2) inset !important; /* match your search-bar background */
-    -webkit-text-fill-color: white !important;
-    transition: background-color 5000s ease-in-out 0s !important;
+.registration-box p a{
+    color:white;
+    font-weight:600;
+    text-decoration:none;
 }
 
-/* Firefox autofill */
-input:-moz-autofill {
-    box-shadow: 0 0 0px 1000px rgba(15, 23, 42, 0.2) inset !important;
-    -moz-text-fill-color: white !important;
+.registration-box p a:hover{
+    text-decoration:underline;
+}
+
+/* ==========================================================
+   CLOSE BUTTON
+========================================================== */
+.exit-popup{
+    position:absolute;
+    top:15px;
+    right:20px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ==========================================================
+   AUTOFILL FIX
+========================================================== */
+input:-webkit-autofill{
+    -webkit-box-shadow:0 0 0px 1000px rgba(15,23,42,0.2) inset !important;
+    -webkit-text-fill-color:white !important;
+}
+
+input:-moz-autofill{
+    box-shadow:0 0 0px 1000px rgba(15,23,42,0.2) inset !important;
+    -moz-text-fill-color:white !important;
 }
