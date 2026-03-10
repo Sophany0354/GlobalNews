@@ -154,3 +154,7 @@ if (searchBtn && searchInput) {
         if (e.key === 'Enter') executeSearch();
     });
 }
+
+document.getElementById('menuToggle').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('active');
+});

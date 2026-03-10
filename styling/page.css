@@ -1,99 +1,77 @@
-html {
-  scroll-behavior: smooth;
-}
-/* =========================
-   1. NEWS CONTAINER
-========================= */
-
-.news-container {   
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column; 
-    position: relative;
-    left: 0;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: left, width;
-}
-
-/* When sidebar pushes layout */
-
-body.sidebar-pushed .news-container {
-    left: 120px;
-    width: calc(90% - 120px);
-}
-
-/* =========================
-   2. GRID LAYOUT
-========================= */
-
-.flowers {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-}
-
-
-/* =========================
-   3. NEWS CARD
-========================= */
-
-.news-card {
-    opacity: 0;
-    transform: translateY(40px);
-
-    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.news-card.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Card hover effect */
-
-.news-card:hover {
-    transform: translateY(-5px) scale(1.02) !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    border-color: rgba(255, 255, 255, 0.3);
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* =========================
-   4. IMAGE STYLE
-========================= */
-
-.flower {
-    width: 100%;
-    max-width: 350px;
+/* GLOBAL & SCROLL FIX */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto !important;
     height: auto;
-    border-radius: 12px;
-    transition: transform 0.4s ease;
+}
+/* MAGAZINE LAYOUT */
+.main-layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 0 20px;
 }
 
-/* Image zoom on hover */
+.content-left { flex: 2.5; }
+.content-right { flex: 1; }
 
-
-
-/* =========================
-   5. TEXT STYLE
-========================= */
-
-.title {
+/* FEATURED ARTICLE */
+.featured-article {
+    position: relative;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.featured-article img { width: 100%; height: 100%; object-fit: cover; }
+.featured-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
     color: white;
-    font-size: 18px;
-    margin: 10px 0 5px 0;
+    width: 100%;
 }
 
-.sentence {
-    color: #CBD5E1;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.5;
+/* HORIZONTAL NEWS LIST */
+.news-list-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.news-list-item img { width: 250px; height: 160px; object-fit: cover; border-radius: 5px; }
+
+/* SOCIAL GRID */
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; width: 500px;}
+.social-item { color: white; padding: 15px; text-align: center; border-radius: 4px; font-weight: bold; }
+.fb { background: #3b5998; } .tw { background: #00acee; } .ig { background: #e4405f; } .yt { background: #cd201f; }
+
+/* UTILS */
+.badge { padding: 4px 10px; border-radius: 3px; font-size: 12px; }
+.red { background: #ff4d4d; color: white; }
+.blue-text { color: #2196F3; font-weight: bold; }
+.purple-text { color: #9c27b0; font-weight: bold; width: 100px;}
+
+.whats-new-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+.news-picture{
+    width: 500px;
+    border-radius: 20px;
+}
+.what{
+    color: black;
+}
+.active-link{
+    color: black;
+    font-size: 15px;
 }

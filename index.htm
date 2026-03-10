@@ -1,323 +1,162 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Front-End Project</title>
+    <title>Global News</title>
     <link rel="stylesheet" href="styling/top.css" />
     <link rel="stylesheet" href="styling/sidebar.css">
     <link rel="stylesheet" href="styling/page.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body>
 
-   <!--ah nis yg dak function nv knong register-->
-       <div id = "regPopup" class="registration-overlay">
+    <div id="regPopup" class="registration-overlay">
         <div class="registration-box">
-          <button class="exit-popup">&times;</button>
-          <h3 class="text-register">Join Global News</h3>
-          <form>
-            <input type="email" placeholder="Email Address" class="email">
-            <input type="password" placeholder="Create Password" class="pw">
-          <div class="remember-forget">
-              <div class="remember-me">
-                <input type="checkbox" id="remember">
-                <label for="remember">Remember me</label>
-              </div> 
-           <a href="#">Forget Password?</a>
-          </div>
-            <button type="submit" class="submit-action">Sign Up</button>
-          </form>
-        
+            <button class="exit-popup">&times;</button>
+            <h3 class="text-register">Join Global News</h3>
+            <form>
+                <input type="email" placeholder="Email Address" class="email">
+                <input type="password" placeholder="Create Password" class="pw">
+                <button type="submit" class="submit-action">Sign Up</button>
+            </form>
         </div>
-       </div>
-
+    </div>
 
     <div class="cover-top">
-      <div class="search-bar">
-        <i class="fa-solid fa-bars"></i>
-        <input type="text"  id="searchInput" placeholder="Search" autocomplete="off" >
-        <i class="fa-solid fa-magnifying-glass search-button" id="searchBtn"></i>
-      </div>
-
-      <div class="name-page">
-        <span class="global">Global</span>
-        <span>News</span>
-      </div>
-
-      <div>
-        <button class="register-button">Register</button>
-        <button class="sign-in-button">Sign in</button>
-      </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-bars" id="menuToggle"></i>
+            <input type="text" id="searchInput" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass search-button"></i>
+        </div>
+        <div class="name-page">
+            <span class="global">Global</span>
+            <span>News</span>
+        </div>
+        <div>
+            <button class="register-button">Register</button>
+            <button class="sign-in-button">Sign in</button>
+        </div>
     </div>
 
     <div class="button-name">
-      <a href="#index-section"><button>News</button></a>
-      <a href="#sport-section"><button>Sport</button></a>
-      <a href="#technology-section"><button>Technology</button></a>
-      <a href="#business-section"><button>Business</button></a>
-      <a href="#health-section"><button>Health</button></a>
-      <a href="#culture-section"><button>Culture</button></a>
+        <button>News</button><button>Sport</button><button>Technology</button>
+        <button>Business</button><button>Health</button><button>Culture</button>
     </div>
 
+    <main class="main-layout">
+        <div class="content-left">
+            <div class="featured-article" data-aos="fade-up">
+                <img src="images/war.avif" alt="Featured">
+                <div class="featured-overlay">
+                    <span class="badge red">Breaking News</span>
+                    <h2>Global protests erupt after Khamenei's death, U.S.-Israeli attacks on Iran</h2>
+                    <p>By GlobalNews • March 10, 2026</p>
+                </div>
+            </div>
 
-<!--ah nis news article-->
-<main class="news-container">
-  <p id="index-section">News</p>
-  <div class="flowers">
+            <div class="whats-new-header">
+                <h2 class="what">Whats New</h2>
+                <div class="cat-links">
+                    <span class="active-link">Lifestyle</span>
+                    <span class="active-link">Travel</span>
+                    <span class="active-link">Fashion</span>
+                </div>
+            </div>
 
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" 
-      alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
+            <div class="news-list-item" data-aos="fade-right">
+                <img src="images/flower.jpg" alt="news">
+                <div class="news-text">
+                    <span class="blue-text">FASHION</span>
+                    <h3>Secretariat for Economic Air plane that looks like</h3>
+                    <p class="date">Jun 19, 2020</p>
+                    <p>This is the news description area...</p>
+                </div>
+            </div>
+
+            <div class="news-list-item" data-aos="fade-right">
+                <img src="images/flower.jpg" alt="news">
+                <div class="news-text">
+                    <span class="blue-text">FASHION</span>
+                    <h3>Secretariat for Economic Air plane that looks like</h3>
+                    <p class="date">Jun 19, 2020</p>
+                    <p>This is the news description area...</p>
+                </div>
+            </div>
+
+
+            <div class="news-list-item" data-aos="fade-right">
+                <img src="images/flower.jpg" alt="news">
+                <div class="news-text">
+                    <span class="blue-text">FASHION</span>
+                    <h3>Secretariat for Economic Air plane that looks like</h3>
+                    <p class="date">Jun 19, 2020</p>
+                    <p>This is the news description area...</p>
+                </div>
+            </div>
+
+
+
+
+
+
+            
+        </div>
+
+        <aside class="content-right">
+            <div class="social-grid">
+                <div class="social-item fb"><i class='bx bxl-facebook'></i><br>8,045</div>
+                <div class="social-item tw"><i class='bx bxl-twitter'></i><br>8,045</div>
+                <div class="social-item ig"><i class='bx bxl-instagram'></i><br>8,045</div>
+                <div class="social-item yt"><i class='bx bxl-youtube'></i><br>8,045</div>
+            </div>
+            <div class="recent-box">
+                <h3 class="recent-title">Local News</h3>
+                <div class="recent-item">
+                    <img src="images/khmerNews.jpg" alt="recent" class="news-picture">
+                    <span class="purple-text">The latest news</span>
+                    <h4>រដ្ឋាភិបាលតាមដានការលក់ប្រេងឥន្ធនៈ បន្ទាប់ពីមានសេចក្តីរាយការណ៍អំពីការរំលោភបំពាននៅតាមស្ថានីយប្រេង</h4>
+                </div>
+
+                <div class="recent-item">
+                    <img src="images/IMG_9684.jpeg" alt="recent" class="news-picture">
+                    <span class="purple-text">២ ម៉ោងមុន</span>
+                    <h4>គម្រោងវារីអគ្គិសនីខ្នាតតូច កំពុងត្រូវបានសិក្សាលម្អិតនៅតាមទីតាំងនៃទំនប់អាងទឹកដូនទ្រី (ខេត្តបាត់ដំបង) និងអាងទឹករក្សា (ខេត្តព្រះវិហារ) ដើម្បីពង្រីកសក្តានុពលនៃការផ្គត់ផ្គង់ថាមពលក្នុងតំបន់។</h4>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="sidebar active">
+        <a href="#" class="Home"><i class='bx bx-home'></i> Home</a>
+        <a href="#"><i class='bx bxs-bell-ring'></i> Breaking News</a>
+        <a href="#"><i class='bx bx-trending-up'></i> Trending News</a>
+        <hr class="line1">
+        <a href="#" class="History"><i class='bx bx-history'></i> History</a>
+        <a href="#"><i class='bx bx-save'></i> saved</a>
+        <a href="#"><i class='bx bx-collection'></i> Collections</a>
+        <hr class="line1">
+        <a href="#" class="Setting"><i class='bx bx-cog'></i> Setting</a>
+        <a href="#"><i class='bx bxs-user-account'></i> Your Account</a>
+        <hr class="line1">
+        <h2 class="Following">Following</h2>
+        <a href="https://edition.cnn.com/" target="_blank" rel="noopener">CNN</a>
+        <a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC</a>
+        <div id="more-following"></div>
+        <a href="#" id="show-more-following">Show Moree ...</a>
     </div>
 
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-      <div class="news-card">
-      <a href="https://www.bbc.com/news">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-      </a>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-  </div>
-</main>
-
-
-<main class="news-container">
-  <p id="sport-section">Sport</p>
-  <div class="flowers">
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" 
-      alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-      <div class="news-card">
-      <a href="https://www.bbc.com/news">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-      </a>
-    </div>
-
-    <div class="news-card">
-      <img src="images/flower.jpg" class="flower" alt="">
-      <div class="news-info">
-        <h3 class="title">Breaking News: City Growth</h3>
-        <p class="sentence">This is where your paragraph goes. It describes the news article in a few short sentences.</p>
-      </div>
-    </div>
-
-  </div>
-</main>
-
-    <div class="sidebar active" >
-
-       <a href="#" class="Home"><i class='bx bx-home'></i> Home</a>
-       <a href="#"><i class='bx bxs-bell-ring' ></i> Breaking News</a>
-       <a href="#"><i class='bx bx-trending-up'></i> Trending News</a>
-
-       <hr class="line1">
-
-       <a href="#" class="History"><i class='bx bx-history' ></i> History</a>
-       <a href="#"><i class='bx bx-save' ></i> saved</a>
-       <a href="#"><i class='bx bx-collection' ></i> Collections</a>
-
-       <hr class="line1">
-
-       <a href="#" class="Setting"><i class='bx bx-cog' ></i> Setting</a>
-       <a href="#"><i class='bx bxs-user-account' ></i> Your Account</a>
-       
-       <hr class="line1">
-
-       <h2 class="Following">Following</h2>
-
-       <a href="https://edition.cnn.com/" target="_blank" rel="noopener">CNN</a>
-       <a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC</a>
-
-       <div id="more-following"></div>
-
-       <a href="#" id="show-more-following">Show Moree ...</a>
-
-       <script src="Javascript.js"></script>
-
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-        <script>
-          AOS.init({
-            duration: 1000
-          });
-        </script>
-    </div>
-   
-  </body>
+    <script src="Javascript.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        // Script to handle your 3-line menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
 </html>
