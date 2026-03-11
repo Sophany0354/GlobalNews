@@ -1,0 +1,182 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* A clean, modern sans-serif like the original */
+}
+
+/* --- Body and Background --- */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #002d5a; /* Deep blue fallback color */
+    
+    /* YOUR REQUESTED BACKGROUND IMAGE (Classic Newspaper) */
+    /* I added a slight gradient overlay to make white text legible. */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=2000');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* All default text is white */
+}
+
+/* --- Login Container --- */
+.login-container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Logo Section --- */
+.logo-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.logo-text {
+    height: 60px; /* Adjust as needed to match the original proportion */
+    filter: brightness(0) invert(1); /* Makes the logo image white */
+}
+
+
+
+/* --- Headings --- */
+.welcome-heading {
+    font-size: 3rem; /* Large and bold */
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.instruction-text {
+    font-size: 1.1rem;
+    color: #b0c4de; /* A lighter, bluish-grey for the description */
+    margin-bottom: 60px;
+}
+
+/* --- Form Fields --- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between fields */
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Positioning the icons inside the fields */
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 18px;
+    opacity: 0.7; /* Makes icons subtly translucent */
+  
+}
+
+/* The actual input text fields */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 20px 20px 20px 50px; /* Leaves room on the left for the icon */
+    font-size: 1.1rem;
+    color: white;
+    background-color: transparent; /* Transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Faint white border */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Placeholder text color */
+.login-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Focus effect when clicking into the field */
+.login-form input:focus {
+    border-color: white; /* Brighter border on focus */
+}
+
+/* --- Utility Row (Stay logged/Forgot Pass) --- */
+.utility-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.stay-logged-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Customizing the checkbox appearance to look sleek */
+.stay-logged-label input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.stay-logged-label input[type="checkbox"]:checked {
+    background-color: white;
+}
+
+/* The checkmark symbol itself */
+.stay-logged-label input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: black;
+    font-size: 12px;
+    top: 0;
+    left: 3px;
+}
+
+.forgot-password {
+    color: #b0c4de;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: white;
+}
+
+/* --- Sign In Button --- */
+.sign-in-btn {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Hover effect to fill the button */
+.sign-in-btn:hover {
+    background-color: white;
+    color: black;
+}
