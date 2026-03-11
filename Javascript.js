@@ -159,3 +159,30 @@ document.getElementById('menuToggle').addEventListener('click', function() {
     document.querySelector('.sidebar').classList.toggle('active');
 });
 
+const apiKey = "YOUR_API_KEY";
+
+fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`)
+.then(response => response.json())
+.then(data => {
+    const articles = data.articles;
+
+    articles.forEach(article => {
+        console.log(article.title);
+    });
+});
+
+const newsContainer = document.getElementById("news");
+
+fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY")
+.then(res => res.json())
+.then(data => {
+    data.articles.forEach(article => {
+        newsContainer.innerHTML += `
+        <div class="news-card">
+            <img src="${article.urlToImage}">
+            <h3>${article.title}</h3>
+            <p>${article.source.name}</p>
+        </div>
+        `;
+    });
+});
