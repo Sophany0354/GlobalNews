@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styling/top.css" />
     <link rel="stylesheet" href="styling/sidebar.css">
     <link rel="stylesheet" href="styling/page.css">
+    <link rel="stylesheet" href="styling/account.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -25,7 +26,31 @@
             <span>News</span>
         </div>
         <div>
-          
+
+   <div class="user-account" onclick="toggleMenu()">
+    <div class="greeting-text">Good Morning, User's name</div>
+    <div class="profile-wrapper">
+        <img src="images/acc.jpg" class="profile-picture">
+        
+        <div class="dropdown-card" id="profileMenu">
+            <div class="menu-header">
+                <img src="images/acc.jpg" class="menu-picture">
+                <div class="user-info">
+                    <h3>Big Guy</h3>
+                    <p>@kingkong123</p>
+                </div>
+            </div>
+            <button class="edit-btn">Edit Profile</button>
+            <ul class="menu-items">
+                <li><span class="arrow">❤️ Favourites</span> <span class="arrow">></span></li>
+                <li><span class="arrow">📥 Downloads</span> <span class="arrow">></span></li>
+                <li><span class="arrow">🌐 Language</span> <span class="arrow">></span></li>
+                <li class="logout"><span class="arrow">🚪 Log out</span> <span class="arrow">></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+       
         </div>
     </div>
 

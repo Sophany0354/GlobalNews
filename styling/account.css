@@ -1,0 +1,94 @@
+.profile-picture{
+    height: 30px;
+    border-radius: 20px;
+}
+.user-account{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    transition: transform 0.3s ease;
+}
+.user-account:hover .greeting-text {
+    color: lightslategray; 
+    transition: 0.3s;
+}
+
+.user-account:hover .profile-picture {
+    transform: rotate(10deg) scale(1.1);
+    border: 2px solid white;
+    transition: 0.3s ease-in-out;
+}
+.greeting-text{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-card {
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    width: 280px;
+    background: rgb(15, 23, 42, 1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,20);
+    padding: 20px;
+    color: #333;
+    text-align: left;
+    
+    /* leak acc */
+    display: none; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* When active, show it */
+.dropdown-card.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling the "Edit Profile" button from your image */
+.edit-btn {
+    width: 100%;
+    background: #36454F; /* That red color from your screenshot */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-items {
+    list-style: none;
+    padding: 0;
+}
+.menu-picture{
+  height: 90px;
+  border-radius: 50px;
+}
+
+.menu-items li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+.arrow{
+  color: white;
+}
+.user-info{
+  color: white;
+}

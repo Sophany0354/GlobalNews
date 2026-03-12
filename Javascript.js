@@ -30,12 +30,7 @@ if (menuIcon && sidebar) {
     });
 }
 
-// Global click listener ONLY for the Register Popup
-window.addEventListener("click", function (e) {
-    if (e.target === regPopup) {
-        regPopup.classList.remove("open");
-    }
-});
+
 
 // ============================================================
 // 2. SHOW MORE (Following list)
@@ -64,23 +59,7 @@ if (showMoreBtn) {
     });
 }
 
-// ============================================================
-// 3. REGISTER POPUP
-// ============================================================
-const registerBtn = document.querySelector(".register-button");
-const closeBtn = document.querySelector(".exit-popup");
 
-if (registerBtn && regPopup) {
-    registerBtn.addEventListener("click", () => {
-        regPopup.classList.add("open");
-    });
-}
-
-if (closeBtn && regPopup) {
-    closeBtn.addEventListener("click", () => {
-        regPopup.classList.remove("open");
-    });
-}
 
 // ============================================================
 // 4. SCROLL REVEAL ANIMATION
@@ -185,4 +164,20 @@ fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY")
         </div>
         `;
     });
+});
+
+
+
+
+function toggleMenu() {
+    const menu = document.getElementById('profileMenu');
+    menu.classList.toggle('show');
+}
+
+// Optional: Close the menu if you click anywhere else on the page
+window.addEventListener('click', function(e) {
+    const userAccount = document.querySelector('.user-account');
+    if (!userAccount.contains(e.target)) {
+        document.getElementById('profileMenu').classList.remove('show');
+    }
 });
