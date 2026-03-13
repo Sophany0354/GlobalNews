@@ -2,27 +2,26 @@
     height: 30px;
     border-radius: 20px;
 }
-.user-account{
+/* Container and Trigger Styles */
+.user-account {
     display: flex;
     flex-direction: row;
-    gap: 25px;
-    transition: transform 0.3s ease;
-}
-.user-account:hover .greeting-text {
-    color: lightslategray; 
-    transition: 0.3s;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: -10px;
+    
 }
 
-.user-account:hover .profile-picture {
-    transform: rotate(10deg) scale(1.1);
-    border: 2px solid white;
-    transition: 0.3s ease-in-out;
-}
-.greeting-text{
+.greeting-text {
     color: white;
     font-size: 20px;
     font-weight: bold;
-    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.user-account:hover .greeting-text {
+    color: #cbd5e1; 
 }
 
 .profile-wrapper {
@@ -30,65 +29,139 @@
     display: inline-block;
 }
 
-.dropdown-card {
-    position: absolute;
-    top: 60px; 
-    right: 0;
-    width: 280px;
-    background: rgb(15, 23, 42, 1);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,20);
-    padding: 20px;
-    color: #333;
-    text-align: left;
-    
-    /* leak acc */
-    display: none; 
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
+.profile-picture {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* When active, show it */
+.user-account:hover .profile-picture {
+    transform: rotate(10deg) scale(1.1);
+    border-color: white;
+}
+
+/*drop down card*/
+.dropdown-card {
+    position: absolute;
+    top: 55px; 
+    right: 0;
+    width: 280px;
+    background: rgba(15, 23, 42, 0.95); /* Dark translucent background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    padding: 30px;
+    z-index: 1000;
+    
+    /* Animation hidden */
+    display: none; 
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
 .dropdown-card.show {
     display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
-/* Styling the "Edit Profile" button from your image */
+/* Header Info inside Dropdown */
+.menu-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.menu-picture {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+.user-info p {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Button Click Animation */
 .edit-btn {
     width: 100%;
-    background: #36454F; /* That red color from your screenshot */
-    color: white;
+    background: white;
+    color: black;
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 15px 0;
+    padding: 12px;
+    border-radius: 12px;
+    margin: 10px 0;
     cursor: pointer;
     font-weight: bold;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
+.edit-btn:hover {
+    background: #38bdf8;
+}
+
+.edit-btn:active {
+    transform: scale(0.92); /* pop effect when clicked */
+}
+
+/* Menu Items & List Animations */
 .menu-items {
     list-style: none;
     padding: 0;
-}
-.menu-picture{
-  height: 90px;
-  border-radius: 50px;
+    margin: 0;
 }
 
 .menu-items li {
     display: flex;
     justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 14px;
+    align-items: center;
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.arrow{
-  color: white;
+
+/* The Slide-to-Right Animation */
+.menu-items li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 20px; /* Moves text to the right */
+    color: #38bdf8; /* Highlight color */
 }
-.user-info{
-  color: white;
+
+.menu-items li:hover .arrow {
+    transform: translateX(5px);
+    color: #38bdf8;
+}
+
+.arrow {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* Special styling for Log Out */
+.logout {
+    border-bottom: none ;
+}
+
+.logout:hover {
+    color: #ff4d4d ;
 }
