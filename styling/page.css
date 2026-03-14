@@ -5,6 +5,7 @@ html, body {
     overflow-y: auto !important;
     height: auto;
 }
+
 /* MAGAZINE LAYOUT */
 .main-layout {
     display: flex;

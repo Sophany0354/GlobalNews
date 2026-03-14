@@ -181,3 +181,22 @@ window.addEventListener('click', function(e) {
         document.getElementById('profileMenu').classList.remove('show');
     }
 });
+
+
+
+// Add another page when scroll down
+
+
+    AOS.init({
+        duration: 1000,
+        once: false,          // Allows animation to repeat
+        mirror: true,         // Re-animates when scrolling past elements
+        anchorPlacement: 'top-bottom', // Triggers when the top of the element hits the bottom of the window
+    });
+
+    // Manually refresh AOS on scroll (fixes some layout glitches)
+    window.addEventListener('scroll', function() {
+        AOS.refresh();
+    });
+
+
