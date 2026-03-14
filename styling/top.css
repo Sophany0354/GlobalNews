@@ -19,8 +19,7 @@ body{
    HEADER & SIDEBAR
 ========================================================== */
 .cover-top,
-.button-name,
-.sidebar{
+.button-name{
     background: rgb(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     z-index:2;
@@ -96,7 +95,6 @@ body{
     position:absolute;
     left:50%;
     transform:translateX(-45%);
-    
 }
 
 .name-page span{
@@ -116,8 +114,6 @@ body{
     display:flex;
     justify-content:center;
     margin-top:63px;
-
-
 }
 
 .button-name button{
