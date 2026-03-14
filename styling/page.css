@@ -44,6 +44,14 @@ html, body {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
+     ox-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer; 
+}
+.news-list-item:hover{
+    transform: translateY(-20px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 1);
+    border-color: black;
 }
 .news-list-item img { width: 250px; height: 160px; object-fit: cover; border-radius: 5px; }
 
