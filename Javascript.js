@@ -182,10 +182,7 @@ window.addEventListener('click', function(e) {
     }
 });
 
-
-
 // Add another page when scroll down
-
 
     AOS.init({
         duration: 1000,
@@ -200,3 +197,8 @@ window.addEventListener('click', function(e) {
     });
 
 
+        AOS.init({ duration: 1000, once: true });
+        // Script to handle your 3-line menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
