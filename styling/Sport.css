@@ -80,8 +80,16 @@
     border-left: 1px solid rgba(255,255,255,0.2); 
 }
 
-.time-box { text-align: center; font-size: 24px; font-weight: bold; }
-.time-box span { display: block; font-size: 10px; text-transform: uppercase; opacity: 0.6; }
+.time-box { 
+    text-align: center; 
+    font-size: 24px; 
+    font-weight: bold; }
+
+.time-box span { 
+    display: block; 
+    font-size: 10px; 
+    text-transform: uppercase; 
+    opacity: 0.6; }
 
 /* Match Cards */
 .results-bg {
@@ -149,9 +157,9 @@
 }
 
 .league-container {
-  max-width: 900px;
-  margin: 50px auto;
-  text-align: center;
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
 }
 
 .table-label {
@@ -168,26 +176,6 @@
   text-transform: uppercase;
 }
 
-.table-row {
-  display: flex;
-  align-items: center;
-  padding: 15px 10px;
-  border-bottom: 1px solid var(--border-color);
-  font-size: 14px;
-}
-
-.table-row.header {
-  background-color: var(--header-bg);
-  font-weight: bold;
-  color: #666;
-  border-top: 1px solid var(--border-color);
-}
-
-.col { flex: 1; text-align: center; }
-.col.pos { flex: 0 0 50px; }
-.col.club { flex: 3; text-align: left; padding-left: 20px; font-weight: 500; }
-.col.pts { font-weight: bold; }
-
 .view-all {
   background-color: var(--accent-red);
   color: white;
@@ -202,4 +190,23 @@
 
 .view-all:hover {
   transform: scale(1.05);
+}
+
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.league-table th,
+.league-table td {
+    padding: 10px;
+}
+
+.league-table th {
+    font-weight: bold;
+}
+
+.league-table tr:nth-child(even){
+    background:#f2f2f2;
 }

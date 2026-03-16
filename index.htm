@@ -9,64 +9,81 @@
     <link rel="stylesheet" href="styling/page.css">
     <link rel="stylesheet" href="styling/account.css">
     <link rel="stylesheet" href="styling/Sport.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- BREAKING NEWS TICKER -->
+    <div class="breaking-ticker" id="breakingTicker">
+        <span class="ticker-label">BREAKING</span>
+        <div class="ticker-track">
+            <span>Global protests erupt after Khamenei's death &nbsp;•&nbsp; Markets rally on trade deal news &nbsp;•&nbsp; Cambodia hydropower expansion announced &nbsp;•&nbsp; Premier League title race intensifies &nbsp;•&nbsp; Tech summit opens in Singapore &nbsp;•&nbsp;</span>
+        </div>
+    </div>
+
+    <!-- TOP NAVBAR -->
     <div class="cover-top">
         <div class="search-bar">
             <i class="fa-solid fa-bars" id="menuToggle"></i>
-            <input type="text" id="searchInput" placeholder="Search">
-            <i class="fa-solid fa-magnifying-glass search-button"></i>
+            <input type="text" id="searchInput" placeholder="Search articles...">
+            <i class="fa-solid fa-magnifying-glass search-button" id="searchBtn"></i>
         </div>
         <div class="name-page">
             <span class="global">Global</span>
             <span>News</span>
         </div>
-        <div>
-
-  <div class="user-account" onclick="toggleMenu()">
-    <div class="greeting-text">Good Morning, User's name</div>
-    <div class="profile-wrapper">
-        <img src="images/acc.jpg" class="profile-picture">
-        
-        <div class="dropdown-card" id="profileMenu">
-            <div class="menu-header">
-                <img src="images/acc.jpg" class="menu-picture">
-                <div class="user-info">
-                    <h3>Big Guy</h3>
-                    <p>@kingkong123</p>
+        <div class="top-right">
+            <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">
+                <i class="fa-solid fa-moon" id="darkIcon"></i>
+            </button>
+            <div class="user-account" onclick="toggleMenu()">
+                <div class="greeting-text" id="greetingText">Good Morning, User</div>
+                <div class="profile-wrapper">
+                    <img src="images/acc.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Big+Guy&background=1a73e8&color=fff'" class="profile-picture" alt="Profile">
+                    <div class="dropdown-card" id="profileMenu">
+                        <div class="menu-header">
+                            <img src="images/acc.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Big+Guy&background=1a73e8&color=fff'" class="menu-picture" alt="Profile">
+                            <div class="user-info">
+                                <h3>Big Guy</h3>
+                                <p>@kingkong123</p>
+                            </div>
+                        </div>
+                        <button class="edit-btn">👤 Edit Profile</button>
+                        <ul class="menu-items">
+                            <li><span class="arrow">⚙️ Settings</span></li>
+                            <li><span class="arrow">📥 Downloads</span></li>
+                            <li><span class="arrow">🌐 Language</span></li>
+                            <li><span class="arrow">❓ Help</span></li>
+                            <li class="logout"><a href="login.html"><span class="arrow">🔒 Log out</span></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <button class="edit-btn">👤 Edit Profile</button>
-            <ul class="menu-items">
-                <li><span class="arrow">⚙️ Settings</span> 
-                <li><span class="arrow">📥 Downloads</span> 
-                <li><span class="arrow">🌐 Language</span> 
-                <li><span class="arrow">❓Help</span> 
-                <li class="logout"><span class="arrow">🔒 Log out</span> 
-            </ul>
-        </div>
-    </div>
-</div>
-       
         </div>
     </div>
 
+    <!-- CATEGORY BUTTONS -->
     <div class="button-name">
-        <button>News</button>
-        <button>Sport</button>
-        <button>Technology</button>
-        <button>Health</button>
+        <button class="cat-btn active" data-cat="all">All</button>
+        <button class="cat-btn" data-cat="news">News</button>
+        <button class="cat-btn" data-cat="sport">Sport</button>
+        <button class="cat-btn" data-cat="technology">Technology</button>
+        <button class="cat-btn" data-cat="health">Health</button>
     </div>
 
-    <main class="main-layout">
+    <!-- SEARCH RESULTS -->
+    <div id="searchResults" class="search-results-panel" style="display:none;"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-layout" id="mainContent">
         <div class="content-left">
-            <div class="featured-article" data-aos="fade-up">
-                <img src="images/war.avif" alt="Featured">
+
+            <!-- FEATURED ARTICLE -->
+            <div class="featured-article" data-aos="fade-up" data-cat="news">
+                <img src="images/war.avif" onerror="this.src='https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&q=80'" alt="Featured News" loading="lazy">
                 <div class="featured-overlay">
                     <span class="badge red">Breaking News</span>
                     <h2>Global protests erupt after Khamenei's death, U.S.-Israeli attacks on Iran</h2>
@@ -74,193 +91,180 @@
                 </div>
             </div>
 
+            <!-- WHAT'S NEW HEADER -->
             <div class="whats-new-header">
-                <h2 class="what">Whats New</h2>
+                <h2 class="what">What's New</h2>
                 <div class="cat-links">
-                    <span class="active-link">Lifestyle</span>
-                    <span class="active-link">Travel</span>
-                    <span class="active-link">Fashion</span>
+                    <span class="filter-link active-link" data-filter="lifestyle">Lifestyle</span>
+                    <span class="filter-link active-link" data-filter="travel">Travel</span>
+                    <span class="filter-link active-link" data-filter="fashion">Fashion</span>
                 </div>
             </div>
 
-            <div class="news-list-item" data-aos="fade-right">
-                <img src="images/flower.jpg" alt="news">
+            <!-- NEWS LIST ITEMS -->
+            <div class="news-list-item" data-aos="fade-right" data-cat="news" data-keywords="fashion secretariat economic">
+                <img src="images/flower.jpg" onerror="this.src='https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80'" alt="Fashion news" loading="lazy">
                 <div class="news-text">
                     <span class="blue-text">FASHION</span>
-                    <h3>Secretariat for Economic Air plane that looks like</h3>
-                    <p class="date">Jun 19, 2020</p>
-                    <p>This is the news description area...</p>
+                    <h3>Secretariat for Economic Affairs reveals new sustainable fashion mandate</h3>
+                    <p class="date"><i class="fa-regular fa-clock"></i> Jun 19, 2020</p>
+                    <p>Industry leaders respond to sweeping new environmental standards that will reshape global fashion supply chains over the next decade.</p>
+                    <button class="save-btn" onclick="saveArticle(this, 'Fashion: Secretariat for Economic Affairs')"><i class="fa-regular fa-bookmark"></i> Save</button>
                 </div>
             </div>
 
-            <div class="news-list-item" data-aos="fade-right">
-                <img src="images/flower.jpg" alt="news">
+            <div class="news-list-item" data-aos="fade-right" data-cat="technology" data-keywords="travel ai airport">
+                <img src="images/flower.jpg" onerror="this.src='https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&q=80'" alt="Tech news" loading="lazy">
                 <div class="news-text">
-                    <span class="blue-text">FASHION</span>
-                    <h3>Secretariat for Economic Air plane that looks like</h3>
-                    <p class="date">Jun 19, 2020</p>
-                    <p>This is the news description area...</p>
+                    <span class="blue-text">TECHNOLOGY</span>
+                    <h3>AI-powered airports: How smart terminals are transforming travel</h3>
+                    <p class="date"><i class="fa-regular fa-clock"></i> Jul 5, 2024</p>
+                    <p>From facial recognition boarding to predictive baggage handling, the airports of tomorrow are already here.</p>
+                    <button class="save-btn" onclick="saveArticle(this, 'Technology: AI-powered airports')"><i class="fa-regular fa-bookmark"></i> Save</button>
                 </div>
             </div>
 
-
-            <div class="news-list-item" data-aos="fade-right">
-                <img src="images/flower.jpg" alt="news">
+            <div class="news-list-item" data-aos="fade-right" data-cat="health" data-keywords="health lifestyle wellness">
+                <img src="images/flower.jpg" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80'" alt="Health news" loading="lazy">
                 <div class="news-text">
-                    <span class="blue-text">FASHION</span>
-                    <h3>Secretariat for Economic Air plane that looks like</h3>
-                    <p class="date">Jun 19, 2020</p>
-                    <p>This is the news description area...</p>
+                    <span class="blue-text">HEALTH</span>
+                    <h3>New WHO guidelines redefine healthy sleep across age groups</h3>
+                    <p class="date"><i class="fa-regular fa-clock"></i> Feb 28, 2026</p>
+                    <p>Researchers call for a complete rethink of how modern society approaches rest, productivity and mental wellbeing.</p>
+                    <button class="save-btn" onclick="saveArticle(this, 'Health: WHO sleep guidelines')"><i class="fa-regular fa-bookmark"></i> Save</button>
                 </div>
             </div>
 
         </div>
 
+        <!-- SIDEBAR RIGHT -->
         <aside class="content-right">
             <div class="social-grid">
                 <div class="social-item fb"><i class='bx bxl-facebook'></i><br>8,045</div>
-                <div class="social-item tw"><i class='bx bxl-twitter'></i><br>8,045</div>
-                <div class="social-item ig"><i class='bx bxl-instagram'></i><br>8,045</div>
-                <div class="social-item yt"><i class='bx bxl-youtube'></i><br>8,045</div>
+                <div class="social-item tw"><i class='bx bxl-twitter'></i><br>12,301</div>
+                <div class="social-item ig"><i class='bx bxl-instagram'></i><br>5,892</div>
+                <div class="social-item yt"><i class='bx bxl-youtube'></i><br>3,210</div>
             </div>
+
+            <!-- SAVED ARTICLES PANEL -->
+            <div class="saved-panel" id="savedPanel">
+                <h3 class="recent-title">📌 Saved Articles</h3>
+                <ul id="savedList"><li class="empty-saved">No saved articles yet.</li></ul>
+            </div>
+
             <div class="recent-box">
                 <h3 class="recent-title">Local News</h3>
                 <div class="recent-item">
-                    <img src="images/khmerNews.jpg" alt="recent" class="news-picture">
+                    <img src="images/khmerNews.jpg" onerror="this.src='https://images.unsplash.com/photo-1529101091764-c3526daf38fe?w=400&q=80'" alt="Khmer news" class="news-picture" loading="lazy">
                     <span class="purple-text">The latest news</span>
                     <h4>រដ្ឋាភិបាលតាមដានការលក់ប្រេងឥន្ធនៈ បន្ទាប់ពីមានសេចក្តីរាយការណ៍អំពីការរំលោភបំពាននៅតាមស្ថានីយប្រេង</h4>
                 </div>
-
                 <div class="recent-item">
-                    <img src="images/IMG_9684.jpeg" alt="recent" class="news-picture">
+                    <img src="images/IMG_9684.jpeg" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80'" alt="Local news" class="news-picture" loading="lazy">
                     <span class="purple-text">២ ម៉ោងមុន</span>
-                    <h4>គម្រោងវារីអគ្គិសនីខ្នាតតូច កំពុងត្រូវបានសិក្សាលម្អិតនៅតាមទីតាំងនៃទំនប់អាងទឹកដូនទ្រី (ខេត្តបាត់ដំបង) និងអាងទឹករក្សា (ខេត្តព្រះវិហារ) ដើម្បីពង្រីកសក្តានុពលនៃការផ្គត់ផ្គង់ថាមពលក្នុងតំបន់។</h4>
+                    <h4>គម្រោងវារីអគ្គិសនីខ្នាតតូច កំពុងត្រូវបានសិក្សាលម្អិតនៅតាមទីតាំងនៃទំនប់អាងទឹកដូនទ្រី</h4>
                 </div>
             </div>
         </aside>
     </main>
 
-
-<section class="second-page-container">
-    <div class="container" data-aos="fade-up" data-aos-duration="1200">
-        <h2 class="sport">
-             Sport 
-        </h2>
-
-<section class="hero-section">
-    <div class="container hero-wrapper" data-aos="fade-up" data-aos-duration="1200">
-        <div class="hero-text-box">
-            <span class="welcome-tag">WELCOME</span>
-            <h1 class="title-football">FOOTBALL CLUB UNITED</h1>
-            <p class="body-text">Ticket prices for the international challenge match between FC United and Spain have been confirmed for October's encounter.</p>
-            <a href="#" class="read-more-btn">Read More</a>
+    <!-- SPORT SECTION -->
+    <section class="second-page-container" id="sport-section" data-cat="sport">
+        <div class="container" data-aos="fade-up" data-aos-duration="1200">
+            <h2 class="sport">Sport</h2>
         </div>
-    </div>
 
-    <div class="match-countdown" data-aos="fade-left" data-aos-delay="400">
-        <div class="next-match-info">
-            <span class="next-tag">NEXT MATCH</span>
-            <p>VS BLUEBIRDS FC</p>
-        </div>
-        <div class="timer">
-            <div class="time-box">58 <span>Days</span></div>
-            <div class="time-box">04 <span>Hrs</span></div>
-            <div class="time-box">08 <span>Mins</span></div>
-            <div class="time-box">54 <span>Secs</span></div>
-        </div>
-    </div>
-</section>
-
-<section class="second-page-container results-bg">
-    <div class="container" data-aos="fade-up">
-        
-        <div class="results-header">
-            <span class="results-label">RESULTS</span>
-            <h2 class="section-title">THE LAST MATCH</h2>
-        </div>
-        
-        <div class="match-cards-row">
-            
-            <div class="match-card" data-aos="zoom-in">
-                <p class="match-date">July 11, 2018</p>
-                <div class="score-row">
-                    <img src="images/team1.png" alt="Team 1" width="40">
-                    <span class="score">3 - 1</span>
-                    <img src="images/team2.png" alt="Team 2" width="40">
+        <section class="hero-section">
+            <div class="container hero-wrapper" data-aos="fade-up" data-aos-duration="1200">
+                <div class="hero-text-box">
+                    <span class="welcome-tag">WELCOME</span>
+                    <h1 class="title-football">FOOTBALL CLUB UNITED</h1>
+                    <p class="body-text">Ticket prices for the international challenge match between FC United and Spain have been confirmed for October's encounter.</p>
+                    <a href="#" class="read-more-btn">Read More</a>
                 </div>
-                <p class="league-name">Premier League</p>
             </div>
 
-            <div class="match-card" data-aos="zoom-in" data-aos-delay="100">
-                <p class="match-date">July 18, 2018</p>
-                <div class="score-row">
-                    <img src="images/team3.png" alt="Team 1" width="40">
-                    <span class="score">1 - 1</span>
-                    <img src="images/team4.png" alt="Team 2" width="40">
+            <div class="match-countdown" data-aos="fade-left" data-aos-delay="400">
+                <div class="next-match-info">
+                    <span class="next-tag">NEXT MATCH</span>
+                    <p>VS BLUEBIRDS FC</p>
                 </div>
-                <p class="league-name">Premier League</p>
+                <div class="timer" id="countdown">
+                    <div class="time-box"><span id="cd-days">58</span><span>Days</span></div>
+                    <div class="time-box"><span id="cd-hrs">04</span><span>Hrs</span></div>
+                    <div class="time-box"><span id="cd-mins">08</span><span>Mins</span></div>
+                    <div class="time-box"><span id="cd-secs">00</span><span>Secs</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="second-page-container results-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="results-header">
+                    <span class="results-label">RESULTS</span>
+                    <h2 class="section-title">THE LAST MATCH</h2>
+                </div>
+                <div class="match-cards-row">
+                    <div class="match-card" data-aos="zoom-in">
+                        <p class="match-date">July 11, 2018</p>
+                        <div class="score-row">
+                            <img src="images/team1.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 1" width="40" loading="lazy">
+                            <span class="score">3 - 1</span>
+                            <img src="images/team2.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 2" width="40" loading="lazy">
+                        </div>
+                        <p class="league-name">Premier League</p>
+                    </div>
+                    <div class="match-card" data-aos="zoom-in" data-aos-delay="100">
+                        <p class="match-date">July 18, 2018</p>
+                        <div class="score-row">
+                            <img src="images/team3.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 3" width="40" loading="lazy">
+                            <span class="score">1 - 1</span>
+                            <img src="images/team4.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 4" width="40" loading="lazy">
+                        </div>
+                        <p class="league-name">Premier League</p>
+                    </div>
+                    <div class="match-card" data-aos="zoom-in" data-aos-delay="200">
+                        <p class="match-date">July 25, 2018</p>
+                        <div class="score-row">
+                            <img src="images/team5.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 5" width="40" loading="lazy">
+                            <span class="score">2 - 3</span>
+                            <img src="images/team6.png" onerror="this.src='https://via.placeholder.com/40'" alt="Team 6" width="40" loading="lazy">
+                        </div>
+                        <p class="league-name">Premier League</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="match-card" data-aos="zoom-in" data-aos-delay="200">
-                <p class="match-date">July 25, 2018</p>
-                <div class="score-row">
-                    <img src="images/team5.png" alt="Team 1" width="40">
-                    <span class="score">2 - 3</span>
-                    <img src="images/team6.png" alt="Team 2" width="40">
-                </div>
-                <p class="league-name">Premier League</p>
+            <div class="league-container">
+                <h3 class="table-label">TABLE</h3>
+                <h1 class="table-title">PREMIER LEAGUE</h1>
+                <table class="league-table">
+                    <tr>
+                        <th>POS</th><th>CLUB</th><th>P</th><th>W</th><th>D</th><th>L</th><th>F</th><th>A</th><th>GD</th><th>PTS</th>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>1</td><td>FC United</td><td>39</td><td>24</td><td>4</td><td>2</td><td>106</td><td>29</td><td>76</td><td>50</td>
+                    </tr>
+                    <tr>
+                        <td>2</td><td>Bluebirds FC</td><td>39</td><td>21</td><td>5</td><td>3</td><td>88</td><td>34</td><td>54</td><td>44</td>
+                    </tr>
+                    <tr>
+                        <td>3</td><td>City Rovers</td><td>39</td><td>18</td><td>7</td><td>4</td><td>72</td><td>40</td><td>32</td><td>43</td>
+                    </tr>
+                </table>
+                <button class="view-all">View Full Table</button>
             </div>
+        </section>
+    </section>
 
-        </div> 
-        </div>
-
-<div class="league-container">
-  <h3 class="table-label">TABLE</h3>
-  <h1 class="table-title">PREMIER LEAGUE</h1>
-
-  <div class="table-wrapper">
-    <div class="table-row header">
-      <div class="col pos">POS</div>
-      <div class="col club">CLUB</div>
-      <div class="col stat">P</div>
-      <div class="col stat">W</div>
-      <div class="col stat">D</div>
-      <div class="col stat">L</div>
-      <div class="col stat">F</div>
-      <div class="col stat">A</div>
-      <div class="col stat">GD</div>
-      <div class="col stat pts">PTS</div>
-    </div>
-
-    <div class="table-row">
-      <div class="col pos">1</div>
-      <div class="col club">FC United</div>
-      <div class="col stat">39</div>
-      <div class="col stat">29</div>
-      <div class="col stat">4</div>
-      <div class="col stat">2</div>
-      <div class="col stat">106</div>
-      <div class="col stat">29</div>
-      <div class="col stat">76</div>
-      <div class="col stat pts">50</div>
-    </div>
-    </div>
-
-  <button class="view-all">View Full Table</button>
-</div>
-
-
-</section>
-
-</section>
-
-    <div class="sidebar active">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar" id="mainSidebar">
         <a href="#" class="Home"><i class='bx bx-home'></i> Home</a>
         <a href="#"><i class='bx bxs-bell-ring'></i> Breaking News</a>
         <a href="#"><i class='bx bx-trending-up'></i> Trending News</a>
         <hr class="line1">
         <a href="#" class="History"><i class='bx bx-history'></i> History</a>
-        <a href="#"><i class='bx bx-save'></i> saved</a>
+        <a href="#" id="savedLink"><i class='bx bx-save'></i> Saved <span id="savedCount" class="saved-badge" style="display:none">0</span></a>
         <a href="#"><i class='bx bx-collection'></i> Collections</a>
         <hr class="line1">
         <a href="#" class="Setting"><i class='bx bx-cog'></i> Setting</a>
@@ -270,17 +274,13 @@
         <a href="https://edition.cnn.com/" target="_blank" rel="noopener">CNN</a>
         <a href="https://www.bbc.com/news" target="_blank" rel="noopener">BBC</a>
         <div id="more-following"></div>
-        <a href="#" id="show-more-following">Show Moree ...</a>
+        <a href="#" id="show-more-following">Show More...</a>
     </div>
 
     <script src="Javascript.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-        // Script to handle your 3-line menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
     </script>
 </body>
 </html>

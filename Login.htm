@@ -3,46 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobleNews Login</title>
+    <title>GlobalNews — Login</title>
     <link rel="stylesheet" href="styling/Login.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="login-container">
+
         <div class="logo-header">
-            <img src="images/logo1.png" alt="Glion Institute of Higher Education" class="logo-text">
-            
-           
+            <img src="images/logo1.png" onerror="this.style.display='none'" alt="GlobalNews" class="logo-text">
+            <div class="brand-name">
+                <span class="brand-global">Global</span><span class="brand-news">News</span>
+            </div>
         </div>
 
-        <h1 class="welcome-heading">Welcome/GlobalNews</h1>
-        <p class="instruction-text">Please login to GlobalNews with your email address</p>
+        <h1 class="welcome-heading">Welcome Back</h1>
+        <p class="instruction-text">Sign in to your GlobalNews account to continue reading</p>
 
-        <form class="login-form">
-            
+        <form class="login-form" onsubmit="handleLogin(event)">
+
             <div class="input-wrapper">
-                <img src="images/logo3.png" alt="Email Icon" class="input-icon">
-                <input type="email" placeholder="Enter your email address" required>
+                <i class="input-icon fa-solid fa-envelope"></i>
+                <input type="email" id="emailInput" placeholder="Enter your email address" required autocomplete="email">
             </div>
 
             <div class="input-wrapper">
-                <img src="images/logo4.png" alt="Lock Icon" class="input-icon">
-                <input type="password" placeholder="Enter your password" required>
+                <i class="input-icon fa-solid fa-lock"></i>
+                <input type="password" id="passwordInput" placeholder="Enter your password" required autocomplete="current-password">
+                <i class="toggle-pass fa-solid fa-eye" id="togglePass" onclick="togglePassword()"></i>
+            </div>
+
+            <div id="loginError" class="login-error" style="display:none;">
+                ⚠️ Incorrect email or password. Please try again.
             </div>
 
             <div class="utility-row">
                 <label class="stay-logged-label">
-                    <input type="checkbox">
+                    <input type="checkbox" id="stayLogged">
                     Stay logged in
                 </label>
-                <a href="#" class="forgot-password">I've forgotten my password</a>
+                <a href="#" class="forgot-password">Forgot password?</a>
             </div>
 
-            <a href="index.htm" class="sign-in-btn">Login</a>
+            <button type="submit" class="sign-in-btn">
+                <span id="btnText">Sign In</span>
+                <span id="btnSpinner" style="display:none">Signing in...</span>
+            </button>
+
+            <p class="register-link">Don't have an account? <a href="#">Register here</a></p>
         </form>
 
     </div>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('passwordInput');
+            const icon = document.getElementById('togglePass');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.sign-in-btn');
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const error = document.getElementById('loginError');
+
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline';
+            btn.disabled = true;
+            error.style.display = 'none';
+
+            // Simulate login — replace with real auth
+            setTimeout(() => {
+                const email = document.getElementById('emailInput').value;
+                // Accept any valid email/password for demo
+                if (email && document.getElementById('passwordInput').value.length >= 6) {
+                    window.location.href = 'index.htm';
+                } else {
+                    error.style.display = 'block';
+                    btnText.style.display = 'inline';
+                    btnSpinner.style.display = 'none';
+                    btn.disabled = false;
+                }
+            }, 1200);
+        }
+    </script>
 </body>
 </html>

@@ -1,101 +1,118 @@
-/* ========================================================== Sidebar ========================================================== */
+/* ============================================================
+   SIDEBAR.CSS — Left navigation sidebar
+   ============================================================ */
+
 .sidebar {
-    display: flex;
-    flex-direction: column; 
-    width: 200px; 
-    gap: 5px;   
     position: fixed;
-    left: -240px;
-    top: 50px; 
-    
-    /* 1. Only keep ONE transition line */
-    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    
-    /* 2. Initial state (Hidden) */
-    visibility: hidden; 
-    opacity: 0;
-    
-    max-height: calc(105vh - 80px); 
-    overflow-y: auto; 
-    overflow-x: hidden;
-    margin-left: 15px;               
-    padding: 20px 10px;               
-    
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); 
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,1);
-    z-index: 1000;
-    
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100vh;
+    background: #0f172a;
+    z-index: 200;
+    padding: 80px 0 20px;
+    overflow-y: auto;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.2);
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    border: none;
 }
 
-/* 3. The Active State - must turn visibility and opacity back on! */
-.sidebar.active {
-    left: 5px;
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Hide scrollbar for Chrome/Safari while keeping scroll active */
 .sidebar::-webkit-scrollbar {
     display: none;
-    width: 0px;
-    background: transparent;
 }
+
+/* Active = slide in */
+.sidebar.active {
+    left: 0;
+}
+
+/* Push body when sidebar opens */
+body.sidebar-pushed {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+/* ---- Links ---- */
 .sidebar a {
-    text-decoration: none;  
-    color: #CBD5E1;            
-    padding: 10px 15px;     
-    font-size: 16px;
-    border-radius: 5px;     
-    transition: 0.2s;       
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+    border-radius: 0;
+}
+
+.sidebar a i {
+    font-size: 18px;
+    width: 20px;
+    flex-shrink: 0;
 }
 
 .sidebar a:hover {
-    background-color: rgba(255, 255, 255, 0.15); 
-    padding-left: 20px;        
-    color: white;
-    font-weight: bold;
+    background: rgba(255,255,255,0.05);
+    color: #f8fafc;
+    padding-left: 26px;
 }
 
-.following{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: white;
+.sidebar a.active,
+.sidebar a.Home {
+    color: #60a5fa;
+    border-left: 3px solid #3b82f6;
+    padding-left: 17px;
 }
 
-.line1{
-    width: 180px;
-    background-color: rgba(255, 255, 255, 0.1);
+/* ---- Divider ---- */
+.line1 {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin: 8px 16px;
 }
 
-.home, 
-.history:hover{
-    font-weight: bold;
+/* ---- Following Section ---- */
+.Following {
+    color: #64748b;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 10px 20px 4px;
+    font-weight: 600;
+    margin: 0;
 }
 
-#more-following{
-    display: flex;
-    flex-direction: column;
-}
-#more-following p{
-    color: #CBD5E1;
-    font-size: 16px;
-    text-decoration: none;            
-    padding: 10px 15px;     
-    border-radius: 5px;     
-    transition: 0.2s; 
-    margin: 0px;
+/* ---- Show More link ---- */
+#show-more-following {
+    color: #475569 !important;
+    font-size: 13px;
+    font-style: italic;
 }
 
-#more-following p:hover{
-    background-color: rgba(255, 255, 255, 0.15); 
-    padding-left: 20px;        
-    color: white;
-    font-weight: bold;
+#show-more-following:hover {
+    color: #94a3b8 !important;
+}
+
+/* ---- Light mode sidebar ---- */
+body:not(.dark-mode) .sidebar {
+    background: #1e293b;
+}
+
+/* ---- Overlay backdrop on mobile ---- */
+@media (max-width: 768px) {
+    body.sidebar-pushed {
+        margin-left: 0;
+    }
+
+    .sidebar.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 250px;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.45);
+        z-index: -1;
+    }
 }
