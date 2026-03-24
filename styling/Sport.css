@@ -208,7 +208,8 @@ body.dark-mode .second-page-container { background-color: #0f172a; }
 
 .results-bg .container,
 .results-bg .match-cards-row,
-.results-bg .results-header {
+.results-bg .results-header,
+.results-bg .league-container {
     position: relative;
     z-index: 1;
 }
@@ -316,7 +317,7 @@ body.dark-mode .league-name { color: #64748b; }
    ============================================================ */
 .league-container {
     max-width: 860px;
-    margin: 60px auto;
+    margin: 0px auto;
     text-align: center;
     padding: 0 20px;
 }
@@ -333,7 +334,6 @@ body.dark-mode .league-name { color: #64748b; }
 .table-title {
     font-size: clamp(1.8rem, 5vw, 3rem);
     font-weight: 900;
-    margin: 0 0 24px;
     text-transform: uppercase;
     font-family: 'Playfair Display', Georgia, serif;
     color: #111;
