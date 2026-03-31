@@ -1,0 +1,146 @@
+/* Force White Background and Dark Text */
+.tech-news-wrapper {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+    padding: 60px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header & Pills */
+.tech-main-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000 !important;
+}
+
+.tech-pills {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.tech-pill {
+    border: 1px solid #ddd;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #444 !important;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.tech-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Images */
+.tech-img-box img, .sidebar-news-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* Featured Story Typography */
+.tech-headline {
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 25px 0 15px 0;
+    color: #1a1a1a !important;
+}
+
+.tech-meta {
+    font-size: 14px;
+    color: #666 !important;
+}
+
+/* Sidebar Styles */
+.sidebar-news-item {
+    margin-bottom: 40px;
+}
+
+.sidebar-cat {
+    display: block;
+    font-size: 12px;
+    color: #555 !important;
+    margin: 15px 0 5px 0;
+}
+
+.sidebar-news-item h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 5px 0;
+    color: #1a1a1a !important;
+}
+
+.sidebar-date {
+    font-size: 13px;
+    color: #888 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .tech-grid { grid-template-columns: 1fr; }
+    .tech-main-title { font-size: 32px; }
+    .tech-headline { font-size: 28px; }
+}
+/* --- Interactive Animations --- */
+
+/* 1. Pill Hover Effect */
+.tech-pill {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+.tech-pill:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 2. Image Zoom Effect on News Items */
+.animate-hover {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.animate-hover img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.animate-hover:hover img {
+    transform: scale(1.05); /* Subtle zoom in */
+}
+
+/* 3. Text Color Change on Hover */
+.animate-hover h2, .animate-hover h3 {
+    transition: color 0.3s ease;
+}
+
+.animate-hover:hover h2, .animate-hover:hover h3 {
+    color: #0056b3 !important; /* Changes headline to blue on hover */
+}
+
+/* 4. Sidebar Image Wrapper Fix */
+.side-img-wrapper {
+    overflow: hidden;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* 5. Smooth Entrance for Sidebar Items */
+.sidebar-news-item {
+    transition: transform 0.3s ease;
+}
+.sidebar-news-item:hover {
+    transform: translateX(10px); /* Slides slightly right on hover */
+}

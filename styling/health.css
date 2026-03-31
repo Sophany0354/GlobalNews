@@ -1,0 +1,92 @@
+/* Container Setup */
+.health-hero-section {
+    background: #ffffff !important;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* The Mega Card Scaling */
+.health-mega-card {
+    display: flex;
+    width: 90vw;             /* Takes up 90% of screen width */
+    max-width: 1600px;       /* Caps at a large desktop size */
+    min-height: 750px;       /* Very tall profile */
+    background: #ffffff;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Left Panel - Blue Section */
+.mega-info-panel {
+    flex: 1.2;
+    background: linear-gradient(135deg, #336199 0%, #1e4d8c 100%);
+    color: white;
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mega-subtitle { font-size: 20px; letter-spacing: 3px; opacity: 0.8; margin-bottom: 10px; }
+.mega-title { font-size: 64px; font-weight: 900; line-height: 1; margin: 20px 0; }
+.mega-tagline { font-size: 32px; font-weight: 300; margin-bottom: 25px; }
+.mega-description { font-size: 20px; line-height: 1.6; opacity: 0.9; margin-bottom: 50px; }
+
+.mega-cta-btn {
+    display: inline-block;
+    padding: 20px 45px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+.mega-cta-btn:hover { background: white; color: #1e4d8c; }
+
+.mega-pager { display: flex; gap: 15px; font-size: 24px; opacity: 0.6; }
+
+
+/* Center Panel - Image */
+.mega-image-panel { flex: 1.5; }
+.mega-image-panel img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Right Panel - Sidebar */
+.mega-sidebar-panel {
+    flex: 1;
+    background: #ffffff;
+    padding: 60px 40px;
+    border-left: 1px solid #eee;
+}
+
+.sidebar-mega-title { 
+    font-size: 28px; 
+    color: #a52a2a; 
+    border-bottom: 4px solid #1e4d8c; 
+    padding-bottom: 20px; 
+    margin-bottom: 40px;
+}
+
+.sidebar-mega-entry { margin-bottom: 45px; }
+.entry-headline { font-size: 22px; color: #1e4d8c; margin-bottom: 10px; line-height: 1.2; }
+.entry-summary { font-size: 17px; color: #555; line-height: 1.5; }
+.entry-timestamp { font-size: 14px; color: #999; display: block; margin-top: 8px; }
+
+.sidebar-mega-footer {
+    display: flex;
+    gap: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.sidebar-mega-footer a { text-decoration: none; color: #1e4d8c; font-weight: bold; font-size: 16px; }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .health-mega-card { flex-direction: column; width: 95vw; height: auto; }
+    .mega-image-panel { height: 500px; }
+}
